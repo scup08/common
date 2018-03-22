@@ -1,10 +1,11 @@
 package com.lzh.common.advice;
 
-import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -18,6 +19,12 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import com.google.common.collect.ImmutableMap;
 import com.lzh.common.RestStatus;
 import com.lzh.common.StatusCode;
+import com.lzh.common.config.RequestAttributeConst;
+import com.lzh.common.exception.IllegalValidateException;
+import com.lzh.common.exception.ReservationExpireException;
+import com.lzh.common.exception.RestStatusException;
+import com.lzh.common.logging.RequestLogging;
+import com.lzh.common.model.dto.response.ErrorEntity;
 
 /**
  * @author 
