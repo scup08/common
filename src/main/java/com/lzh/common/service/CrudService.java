@@ -1,7 +1,7 @@
 package com.lzh.common.service;
 
 /**
- * @author Zhao Junjian
+ * @author 
  */
 public interface CrudService<T> {
 

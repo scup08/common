@@ -10,7 +10,7 @@ import com.lzh.common.service.CrudService;
 /**
  * 支持泛型注入的CrudService的默认实现
  *
- * @author Zhao Junjian
+ * @author 
  */
 public class CrudServiceImpl<T extends IdentityDomain> implements CrudService<T> {
 
