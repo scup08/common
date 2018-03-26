@@ -24,5 +24,17 @@ import lombok.ToString;
 @JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler", "fieldHandler"}, ignoreUnknown = true)
 public class RestfulRequest implements Request {
     private static final long serialVersionUID = -2363877433041183308L;
-
+    
+    /**
+     * mysql分页参数
+     * 偏移量
+     */
+    public int offset ;
+    /**
+     * mysql分页参数
+     * 数据量
+     */
+    public int limited ;
+    
+    
 }

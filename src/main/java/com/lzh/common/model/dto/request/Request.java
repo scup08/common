@@ -6,4 +6,5 @@ import java.io.Serializable;
  * @author 
  */
 public interface Request extends Serializable {
+	
 }
