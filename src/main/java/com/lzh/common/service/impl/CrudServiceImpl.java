@@ -1,9 +1,6 @@
 package com.lzh.common.service.impl;
 
-import java.time.OffsetDateTime;
-
 import com.google.common.base.Preconditions;
-import com.lzh.common.model.dto.IdentityDomain;
 import com.lzh.common.persistence.CrudMapper;
 import com.lzh.common.service.CrudService;
 
@@ -12,7 +9,7 @@ import com.lzh.common.service.CrudService;
  *
  * @author 
  */
-public class CrudServiceImpl<T extends IdentityDomain> implements CrudService<T> {
+public class CrudServiceImpl<T> implements CrudService<T> {
 
     private final CrudMapper<T> mapper;
 
@@ -29,28 +26,28 @@ public class CrudServiceImpl<T extends IdentityDomain> implements CrudService<T>
     @Override
     public int persistNonNullProperties(T entity) {
         Preconditions.checkNotNull(entity, "persisting entity should not be NULL");
-        initializeOffsetDateTime(entity);
+//        initializeOffsetDateTime(entity);
         return getMapper().insertSelective(entity);
     }
 
     @Override
     public int persist(T entity) {
         Preconditions.checkNotNull(entity, "persisting entity should not be NULL");
-        initializeOffsetDateTime(entity);
+//        initializeOffsetDateTime(entity);
         return getMapper().insert(entity);
     }
 
     @Override
     public int update(T entity) {
         Preconditions.checkNotNull(entity, "entity in updating should not be NULL");
-        entity.setUpdateTime(OffsetDateTime.now());
+//        entity.setUpdateTime(OffsetDateTime.now());
         return getMapper().updateByPrimaryKey(entity);
     }
 
     @Override
     public int updateNonNullProperties(T entity) {
         Preconditions.checkNotNull(entity, "entity in updating should not be NULL");
-        entity.setUpdateTime(OffsetDateTime.now());
+//        entity.setUpdateTime(OffsetDateTime.now());
         return getMapper().updateByPrimaryKeySelective(entity);
     }
 
@@ -65,13 +62,13 @@ public class CrudServiceImpl<T extends IdentityDomain> implements CrudService<T>
     }
 
     private void initializeOffsetDateTime(T entity) {
-        entity.setCreateTime(OffsetDateTime.now());
-        if (entity.getUpdateTime() == null) {
-            entity.setUpdateTime(IdentityDomain.DEFAULT_DATE_TIME);
-        }
-        if (entity.getDeleteTime() == null) {
-            entity.setDeleteTime(IdentityDomain.DEFAULT_DATE_TIME);
-        }
+//        entity.setCreateTime(OffsetDateTime.now());
+//        if (entity.getUpdateTime() == null) {
+//            entity.setUpdateTime(IdentityDomain.DEFAULT_DATE_TIME);
+//        }
+//        if (entity.getDeleteTime() == null) {
+//            entity.setDeleteTime(IdentityDomain.DEFAULT_DATE_TIME);
+//        }
     }
 
 }
