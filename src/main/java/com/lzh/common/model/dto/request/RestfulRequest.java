@@ -29,12 +29,12 @@ public class RestfulRequest implements Request {
      * mysql分页参数
      * 偏移量
      */
-    public int offset ;
+    public int offset = -1;
     /**
      * mysql分页参数
      * 数据量
      */
-    public int limited ;
+    public int limited = -1 ;
     
     
 }
