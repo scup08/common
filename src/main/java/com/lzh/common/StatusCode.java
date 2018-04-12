@@ -58,7 +58,12 @@ public enum StatusCode implements RestStatus {
     /**
      * 用于处理未知的服务端错误
      */
-    SERVER_UNKNOWN_ERROR(50001, "服务端异常, 请稍后再试");
+    SERVER_UNKNOWN_ERROR(50001, "服务端异常, 请稍后再试"),
+	
+	/**
+	 * 认证异常
+	 */
+	UNAUTHORIZED(40101, "认证异常");
 
     private final int code;
 

@@ -1,7 +1,7 @@
 package com.lzh.common;
 
 /**
- * @author Zhao Junjian
+ * @author 
  */
 public interface RestStatus {
 
