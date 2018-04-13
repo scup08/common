@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import com.lzh.common.model.entity.auth.UserDto;
@@ -14,6 +16,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+@ConfigurationProperties( prefix = "jwt")
+@PropertySource("classpath:application.properties")
 @Component
 public class JwtTokenUtil implements Serializable {
 
@@ -25,8 +29,20 @@ public class JwtTokenUtil implements Serializable {
     @Value("${jwt.secret}")
     private String secret;
 
-    @Value("${jwt.expiration}")
+    public String getSecret() {
+		return secret;
+	}
+
+	public void setSecret(String secret) {
+		this.secret = secret;
+	}
+
+	@Value("${jwt.expiration}")
     private Long expiration;
+    
+    @Value("${jwt.tokenHead}")
+    private String tokenHead;
+    
 
     public String getUsernameFromToken(String token) {
         String username;
@@ -125,6 +141,14 @@ public class JwtTokenUtil implements Serializable {
         return refreshedToken;
     }
 
+	public String getTokenHead() {
+		return tokenHead;
+	}
+
+	public void setTokenHead(String tokenHead) {
+		this.tokenHead = tokenHead;
+	}
+
 //    public Boolean validateToken(String token, UserDetails userDetails) {
 //        JwtUser user = (JwtUser) userDetails;
 //        final String username = getUsernameFromToken(token);
@@ -135,5 +159,6 @@ public class JwtTokenUtil implements Serializable {
 //                        && !isTokenExpired(token)
 //                        && !isCreatedBeforeLastPasswordReset(created, user.getLastPasswordResetDate()));
 //    }
+    
 }
 
