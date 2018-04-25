@@ -20,7 +20,7 @@ public final class Jacksons {
             }
             return MAPPER.writeValueAsString(obj);
         } catch (JsonProcessingException e) {
-            Throwables.throwIfUnchecked(e);
+//            Throwables.throwIfUnchecked(e);
             throw new IllegalArgumentException(e);
         }
     }
@@ -29,7 +29,7 @@ public final class Jacksons {
         try {
             return MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(obj);
         } catch (JsonProcessingException e) {
-            Throwables.throwIfUnchecked(e);
+//            Throwables.throwIfUnchecked(e);
             throw new IllegalArgumentException(e);
         }
     }
