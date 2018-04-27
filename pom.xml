@@ -15,7 +15,14 @@
 		<artifactId>myparent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+		<dependency>
+		    <groupId>org.mybatis.spring.boot</groupId>
+		    <artifactId>mybatis-spring-boot-starter</artifactId>
+		    <version>${mybatis.version}</version>
+		</dependency>
+	</dependencies>
 	<build>
 		<finalName>common</finalName>
 		<plugins>
