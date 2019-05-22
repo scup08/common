@@ -23,6 +23,10 @@ public class ObjectDataResponse<T> extends RestfulResponse {
 
     private T data;
 
+    public ObjectDataResponse() {
+        
+    }
+    
     public ObjectDataResponse(T data) {
         this.data = data;
     }

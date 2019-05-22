@@ -9,9 +9,14 @@ public class UserDto {
     private String username;
     private String password;
     private String email;
+    private String mobile;
+    private String pwdSalt;
     private Date lastPasswordResetDate;
     private List<String> roles;
     private String token;
+    
+    private String secret;
+    private Long expiration = 7200l;
     
 	public int getId() {
 		return id;
@@ -54,6 +59,30 @@ public class UserDto {
 	}
 	public void setToken(String token) {
 		this.token = token;
+	}
+	public Long getExpiration() {
+		return expiration;
+	}
+	public void setExpiration(Long expiration) {
+		this.expiration = expiration;
+	}
+	public String getSecret() {
+		return secret;
+	}
+	public void setSecret(String secret) {
+		this.secret = secret;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	public String getPwdSalt() {
+		return pwdSalt;
+	}
+	public void setPwdSalt(String pwdSalt) {
+		this.pwdSalt = pwdSalt;
 	}
     
 }

@@ -3,15 +3,11 @@ package com.lzh.common.model.entity.account;
 import java.util.Date;
 
 public class TAccountUser {
-    private Long id;
+    private Long uuid;
 
     private Date createTime;
 
-    private Date updateTime;
-
-    private Date deleteTime;
-
-    private Integer deleteFlag;
+    private Integer usableFlag;
 
     private String mobile;
 
@@ -19,14 +15,12 @@ public class TAccountUser {
 
     private String pwdSalt;
 
-    private Long balance;
-
-    public Long getId() {
-        return id;
+    public Long getUuid() {
+        return uuid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUuid(Long uuid) {
+        this.uuid = uuid;
     }
 
     public Date getCreateTime() {
@@ -37,28 +31,12 @@ public class TAccountUser {
         this.createTime = createTime;
     }
 
-    public Date getUpdateTime() {
-        return updateTime;
+    public Integer getUsableFlag() {
+        return usableFlag;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public Date getDeleteTime() {
-        return deleteTime;
-    }
-
-    public void setDeleteTime(Date deleteTime) {
-        this.deleteTime = deleteTime;
-    }
-
-    public Integer getDeleteFlag() {
-        return deleteFlag;
-    }
-
-    public void setDeleteFlag(Integer deleteFlag) {
-        this.deleteFlag = deleteFlag;
+    public void setUsableFlag(Integer usableFlag) {
+        this.usableFlag = usableFlag;
     }
 
     public String getMobile() {
@@ -83,13 +61,5 @@ public class TAccountUser {
 
     public void setPwdSalt(String pwdSalt) {
         this.pwdSalt = pwdSalt == null ? null : pwdSalt.trim();
-    }
-
-    public Long getBalance() {
-        return balance;
-    }
-
-    public void setBalance(Long balance) {
-        this.balance = balance;
     }
 }

@@ -45,10 +45,18 @@ public enum StatusCode implements RestStatus {
     USER_NOT_EXISTS(42003, "用户不存在, 请先注册"),
 
     /**
+     *  注册信息不完整
+     */
+    USER_INFO_INCOMPLETE(42006, "注册信息不完整"),
+
+    /**
+     *  redis 异常
+     */
+    REDIS_UNKNOWN_ERROR(42007, "redis服务异常"),
+    /**
      * 凭证错误
      */
     INVALID_CREDENTIAL(42004, "用户名或密码错误"),
-
     /**
      * 用户余额不足
      */
